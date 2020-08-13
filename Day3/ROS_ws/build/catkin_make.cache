@@ -1,0 +1,2 @@
+ROS_pkg
+-DCATKIN_DEVEL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day3/ROS_ws/devel -DCMAKE_INSTALL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day3/ROS_ws/install -G Unix Makefiles

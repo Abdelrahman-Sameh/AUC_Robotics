@@ -1,0 +1,8 @@
+prefix=/home/abdelrahman/Desktop/AUC_Robotics/Day3/ROS_ws/devel
+
+Name: ROS_pkg
+Description: Description of ROS_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
