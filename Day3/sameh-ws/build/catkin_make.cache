@@ -1,0 +1,2 @@
+pkg
+-DCATKIN_DEVEL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day3/sameh-ws/devel -DCMAKE_INSTALL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day3/sameh-ws/install -G Unix Makefiles
