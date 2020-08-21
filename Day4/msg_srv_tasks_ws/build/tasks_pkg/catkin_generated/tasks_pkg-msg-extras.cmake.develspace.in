@@ -1,0 +1,2 @@
+set(tasks_pkg_MESSAGE_FILES "")
+set(tasks_pkg_SERVICE_FILES "/home/abdelrahman/Desktop/AUC_Robotics/Day4/msg_srv_tasks_ws/src/tasks_pkg/srv/calculate_words.srv")

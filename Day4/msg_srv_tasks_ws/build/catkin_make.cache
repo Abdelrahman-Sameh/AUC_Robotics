@@ -1,0 +1,2 @@
+tasks_pkg
+-DCATKIN_DEVEL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day4/msg_srv_tasks_ws/devel -DCMAKE_INSTALL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day4/msg_srv_tasks_ws/install -G Unix Makefiles
