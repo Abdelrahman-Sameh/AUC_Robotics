@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "pkg: 0 messages, 1 services")
+message(STATUS "pkg: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ipkg:/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,6 +17,11 @@ add_custom_target(pkg_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg" NAME_WE)
+add_custom_target(_pkg_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pkg" "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg" ""
+)
+
 get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv" NAME_WE)
 add_custom_target(_pkg_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pkg" "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv" ""
@@ -28,6 +33,12 @@ add_custom_target(_pkg_generate_messages_check_deps_${_filename}
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(pkg
+  "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pkg
+)
 
 ### Generating Services
 _generate_srv_cpp(pkg
@@ -49,6 +60,8 @@ add_custom_target(pkg_generate_messages_cpp
 add_dependencies(pkg_generate_messages pkg_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg" NAME_WE)
+add_dependencies(pkg_generate_messages_cpp _pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv" NAME_WE)
 add_dependencies(pkg_generate_messages_cpp _pkg_generate_messages_check_deps_${_filename})
 
@@ -61,6 +74,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pkg_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(pkg
+  "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pkg
+)
 
 ### Generating Services
 _generate_srv_eus(pkg
@@ -82,6 +101,8 @@ add_custom_target(pkg_generate_messages_eus
 add_dependencies(pkg_generate_messages pkg_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg" NAME_WE)
+add_dependencies(pkg_generate_messages_eus _pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv" NAME_WE)
 add_dependencies(pkg_generate_messages_eus _pkg_generate_messages_check_deps_${_filename})
 
@@ -94,6 +115,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pkg_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(pkg
+  "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pkg
+)
 
 ### Generating Services
 _generate_srv_lisp(pkg
@@ -115,6 +142,8 @@ add_custom_target(pkg_generate_messages_lisp
 add_dependencies(pkg_generate_messages pkg_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg" NAME_WE)
+add_dependencies(pkg_generate_messages_lisp _pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv" NAME_WE)
 add_dependencies(pkg_generate_messages_lisp _pkg_generate_messages_check_deps_${_filename})
 
@@ -127,6 +156,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pkg_generate_messages_lisp)
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(pkg
+  "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pkg
+)
 
 ### Generating Services
 _generate_srv_nodejs(pkg
@@ -148,6 +183,8 @@ add_custom_target(pkg_generate_messages_nodejs
 add_dependencies(pkg_generate_messages pkg_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg" NAME_WE)
+add_dependencies(pkg_generate_messages_nodejs _pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv" NAME_WE)
 add_dependencies(pkg_generate_messages_nodejs _pkg_generate_messages_check_deps_${_filename})
 
@@ -160,6 +197,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pkg_generate_messages_nodejs)
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(pkg
+  "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pkg
+)
 
 ### Generating Services
 _generate_srv_py(pkg
@@ -181,6 +224,8 @@ add_custom_target(pkg_generate_messages_py
 add_dependencies(pkg_generate_messages pkg_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg" NAME_WE)
+add_dependencies(pkg_generate_messages_py _pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv" NAME_WE)
 add_dependencies(pkg_generate_messages_py _pkg_generate_messages_check_deps_${_filename})
 

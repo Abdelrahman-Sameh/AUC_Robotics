@@ -11,7 +11,6 @@ class wordsCounterRequest(genpy.Message):
   _type = "pkg/wordsCounterRequest"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """string sentence
-
 """
   __slots__ = ['sentence']
   _slot_types = ['string']
@@ -130,14 +129,13 @@ import struct
 
 
 class wordsCounterResponse(genpy.Message):
-  _md5sum = "bea39d163c45cfc1cc637ad91c8f27e4"
+  _md5sum = "2474488a3908093ec1307bdd5b35815e"
   _type = "pkg/wordsCounterResponse"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """
-int32 client
+  _full_text = """int32 number
 
 """
-  __slots__ = ['client']
+  __slots__ = ['number']
   _slot_types = ['int32']
 
   def __init__(self, *args, **kwds):
@@ -148,7 +146,7 @@ int32 client
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       client
+       number
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -157,10 +155,10 @@ int32 client
     if args or kwds:
       super(wordsCounterResponse, self).__init__(*args, **kwds)
       # message fields cannot be None, assign default values for those that are
-      if self.client is None:
-        self.client = 0
+      if self.number is None:
+        self.number = 0
     else:
-      self.client = 0
+      self.number = 0
 
   def _get_types(self):
     """
@@ -174,7 +172,7 @@ int32 client
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self.client
+      _x = self.number
       buff.write(_get_struct_i().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
@@ -188,7 +186,7 @@ int32 client
       end = 0
       start = end
       end += 4
-      (self.client,) = _get_struct_i().unpack(str[start:end])
+      (self.number,) = _get_struct_i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -201,7 +199,7 @@ int32 client
     :param numpy: numpy python module
     """
     try:
-      _x = self.client
+      _x = self.number
       buff.write(_get_struct_i().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
@@ -216,7 +214,7 @@ int32 client
       end = 0
       start = end
       end += 4
-      (self.client,) = _get_struct_i().unpack(str[start:end])
+      (self.number,) = _get_struct_i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -233,6 +231,6 @@ def _get_struct_i():
     return _struct_i
 class wordsCounter(object):
   _type          = 'pkg/wordsCounter'
-  _md5sum = '3c07c9839699468ac5184f42072bdf6e'
+  _md5sum = '4afd19f9b5153106d13d35f8799bf301'
   _request_class  = wordsCounterRequest
   _response_class = wordsCounterResponse

@@ -57,37 +57,37 @@
 
 (defclass pkg::wordsCounterResponse
   :super ros::object
-  :slots (_client ))
+  :slots (_number ))
 
 (defmethod pkg::wordsCounterResponse
   (:init
    (&key
-    ((:client __client) 0)
+    ((:number __number) 0)
     )
    (send-super :init)
-   (setq _client (round __client))
+   (setq _number (round __number))
    self)
-  (:client
-   (&optional __client)
-   (if __client (setq _client __client)) _client)
+  (:number
+   (&optional __number)
+   (if __number (setq _number __number)) _number)
   (:serialization-length
    ()
    (+
-    ;; int32 _client
+    ;; int32 _number
     4
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int32 _client
-       (write-long _client s)
+     ;; int32 _number
+       (write-long _number s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int32 _client
-     (setq _client (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _number
+     (setq _number (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;;
    self)
   )
@@ -96,7 +96,7 @@
   :super ros::object
   :slots ())
 
-(setf (get pkg::wordsCounter :md5sum-) "3c07c9839699468ac5184f42072bdf6e")
+(setf (get pkg::wordsCounter :md5sum-) "4afd19f9b5153106d13d35f8799bf301")
 (setf (get pkg::wordsCounter :datatype-) "pkg/wordsCounter")
 (setf (get pkg::wordsCounter :request) pkg::wordsCounterRequest)
 (setf (get pkg::wordsCounter :response) pkg::wordsCounterResponse)
@@ -104,30 +104,26 @@
 (defmethod pkg::wordsCounterRequest
   (:response () (instance pkg::wordsCounterResponse :init)))
 
-(setf (get pkg::wordsCounterRequest :md5sum-) "3c07c9839699468ac5184f42072bdf6e")
+(setf (get pkg::wordsCounterRequest :md5sum-) "4afd19f9b5153106d13d35f8799bf301")
 (setf (get pkg::wordsCounterRequest :datatype-) "pkg/wordsCounterRequest")
 (setf (get pkg::wordsCounterRequest :definition-)
       "string sentence
-
 ---
-
-int32 client
+int32 number
 
 ")
 
-(setf (get pkg::wordsCounterResponse :md5sum-) "3c07c9839699468ac5184f42072bdf6e")
+(setf (get pkg::wordsCounterResponse :md5sum-) "4afd19f9b5153106d13d35f8799bf301")
 (setf (get pkg::wordsCounterResponse :datatype-) "pkg/wordsCounterResponse")
 (setf (get pkg::wordsCounterResponse :definition-)
       "string sentence
-
 ---
-
-int32 client
+int32 number
 
 ")
 
 
 
-(provide :pkg/wordsCounter "3c07c9839699468ac5184f42072bdf6e")
+(provide :pkg/wordsCounter "4afd19f9b5153106d13d35f8799bf301")
 
 

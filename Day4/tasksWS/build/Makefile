@@ -467,6 +467,19 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named _pkg_generate_messages_check_deps_complex
+
+# Build rule for target.
+_pkg_generate_messages_check_deps_complex: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _pkg_generate_messages_check_deps_complex
+.PHONY : _pkg_generate_messages_check_deps_complex
+
+# fast build rule for target.
+_pkg_generate_messages_check_deps_complex/fast:
+	$(MAKE) -f pkg/CMakeFiles/_pkg_generate_messages_check_deps_complex.dir/build.make pkg/CMakeFiles/_pkg_generate_messages_check_deps_complex.dir/build
+.PHONY : _pkg_generate_messages_check_deps_complex/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -671,6 +684,7 @@ help:
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... pkg_genpy"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... _pkg_generate_messages_check_deps_complex"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_eus"

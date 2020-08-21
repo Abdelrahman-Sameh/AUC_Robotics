@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pkg_generate_messages_nodejs"
+  "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/devel/share/gennodejs/ros/pkg/msg/complex.js"
   "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/devel/share/gennodejs/ros/pkg/srv/wordsCounter.js"
 )
 

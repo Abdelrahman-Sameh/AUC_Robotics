@@ -147,7 +147,6 @@ struct Definition< ::pkg::wordsCounterRequest_<ContainerAllocator> >
   static const char* value()
   {
     return "string sentence\n"
-"\n"
 ;
   }
 

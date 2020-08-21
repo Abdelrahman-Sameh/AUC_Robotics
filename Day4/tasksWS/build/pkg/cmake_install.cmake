@@ -38,6 +38,10 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pkg/msg" TYPE FILE FILES "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/msg/complex.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pkg/srv" TYPE FILE FILES "/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/src/pkg/srv/wordsCounter.srv")
 endif()
 

@@ -55,16 +55,16 @@
   "pkg/wordsCounterRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<wordsCounter-request>)))
   "Returns md5sum for a message object of type '<wordsCounter-request>"
-  "3c07c9839699468ac5184f42072bdf6e")
+  "4afd19f9b5153106d13d35f8799bf301")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'wordsCounter-request)))
   "Returns md5sum for a message object of type 'wordsCounter-request"
-  "3c07c9839699468ac5184f42072bdf6e")
+  "4afd19f9b5153106d13d35f8799bf301")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<wordsCounter-request>)))
   "Returns full string definition for message of type '<wordsCounter-request>"
-  (cl:format cl:nil "string sentence~%~%~%~%"))
+  (cl:format cl:nil "string sentence~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'wordsCounter-request)))
   "Returns full string definition for message of type 'wordsCounter-request"
-  (cl:format cl:nil "string sentence~%~%~%~%"))
+  (cl:format cl:nil "string sentence~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <wordsCounter-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'sentence))
@@ -77,9 +77,9 @@
 ;//! \htmlinclude wordsCounter-response.msg.html
 
 (cl:defclass <wordsCounter-response> (roslisp-msg-protocol:ros-message)
-  ((client
-    :reader client
-    :initarg :client
+  ((number
+    :reader number
+    :initarg :number
     :type cl:integer
     :initform 0))
 )
@@ -92,13 +92,13 @@
   (cl:unless (cl:typep m 'wordsCounter-response)
     (roslisp-msg-protocol:msg-deprecation-warning "using old message class name pkg-srv:<wordsCounter-response> is deprecated: use pkg-srv:wordsCounter-response instead.")))
 
-(cl:ensure-generic-function 'client-val :lambda-list '(m))
-(cl:defmethod client-val ((m <wordsCounter-response>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader pkg-srv:client-val is deprecated.  Use pkg-srv:client instead.")
-  (client m))
+(cl:ensure-generic-function 'number-val :lambda-list '(m))
+(cl:defmethod number-val ((m <wordsCounter-response>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader pkg-srv:number-val is deprecated.  Use pkg-srv:number instead.")
+  (number m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <wordsCounter-response>) ostream)
   "Serializes a message object of type '<wordsCounter-response>"
-  (cl:let* ((signed (cl:slot-value msg 'client)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'number)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
@@ -112,7 +112,7 @@
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'client) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+      (cl:setf (cl:slot-value msg 'number) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<wordsCounter-response>)))
@@ -123,16 +123,16 @@
   "pkg/wordsCounterResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<wordsCounter-response>)))
   "Returns md5sum for a message object of type '<wordsCounter-response>"
-  "3c07c9839699468ac5184f42072bdf6e")
+  "4afd19f9b5153106d13d35f8799bf301")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'wordsCounter-response)))
   "Returns md5sum for a message object of type 'wordsCounter-response"
-  "3c07c9839699468ac5184f42072bdf6e")
+  "4afd19f9b5153106d13d35f8799bf301")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<wordsCounter-response>)))
   "Returns full string definition for message of type '<wordsCounter-response>"
-  (cl:format cl:nil "~%int32 client~%~%~%~%"))
+  (cl:format cl:nil "int32 number~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'wordsCounter-response)))
   "Returns full string definition for message of type 'wordsCounter-response"
-  (cl:format cl:nil "~%int32 client~%~%~%~%"))
+  (cl:format cl:nil "int32 number~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <wordsCounter-response>))
   (cl:+ 0
      4
@@ -140,7 +140,7 @@
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <wordsCounter-response>))
   "Converts a ROS message object to a list"
   (cl:list 'wordsCounter-response
-    (cl:cons ':client (client msg))
+    (cl:cons ':number (number msg))
 ))
 (cl:defmethod roslisp-msg-protocol:service-request-type ((msg (cl:eql 'wordsCounter)))
   'wordsCounter-request)

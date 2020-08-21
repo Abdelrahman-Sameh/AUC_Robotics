@@ -1,11 +1,12 @@
 #!/usr/bin/env python
     
+import rospy
+import sys
+
 from pkg.srv import wordsCounter
 from pkg.srv import wordsCounterRequest
 from pkg.srv import wordsCounterResponse
 
-import rospy
-import sys
     
 def client(sentence):
     rospy.wait_for_service('counter_words')

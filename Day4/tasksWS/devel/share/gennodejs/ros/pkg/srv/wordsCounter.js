@@ -70,7 +70,6 @@ class wordsCounterRequest {
     return `
     string sentence
     
-    
     `;
   }
 
@@ -95,22 +94,22 @@ class wordsCounterResponse {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.client = null;
+      this.number = null;
     }
     else {
-      if (initObj.hasOwnProperty('client')) {
-        this.client = initObj.client
+      if (initObj.hasOwnProperty('number')) {
+        this.number = initObj.number
       }
       else {
-        this.client = 0;
+        this.number = 0;
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type wordsCounterResponse
-    // Serialize message field [client]
-    bufferOffset = _serializer.int32(obj.client, buffer, bufferOffset);
+    // Serialize message field [number]
+    bufferOffset = _serializer.int32(obj.number, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -118,8 +117,8 @@ class wordsCounterResponse {
     //deserializes a message object of type wordsCounterResponse
     let len;
     let data = new wordsCounterResponse(null);
-    // Deserialize message field [client]
-    data.client = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [number]
+    data.number = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
@@ -134,14 +133,13 @@ class wordsCounterResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'bea39d163c45cfc1cc637ad91c8f27e4';
+    return '2474488a3908093ec1307bdd5b35815e';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    int32 client
+    int32 number
     
     
     `;
@@ -153,11 +151,11 @@ class wordsCounterResponse {
       msg = {};
     }
     const resolved = new wordsCounterResponse(null);
-    if (msg.client !== undefined) {
-      resolved.client = msg.client;
+    if (msg.number !== undefined) {
+      resolved.number = msg.number;
     }
     else {
-      resolved.client = 0
+      resolved.number = 0
     }
 
     return resolved;
@@ -167,6 +165,6 @@ class wordsCounterResponse {
 module.exports = {
   Request: wordsCounterRequest,
   Response: wordsCounterResponse,
-  md5sum() { return '3c07c9839699468ac5184f42072bdf6e'; },
+  md5sum() { return '4afd19f9b5153106d13d35f8799bf301'; },
   datatype() { return 'pkg/wordsCounter'; }
 };

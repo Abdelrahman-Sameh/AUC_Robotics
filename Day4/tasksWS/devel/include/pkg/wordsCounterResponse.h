@@ -24,17 +24,17 @@ struct wordsCounterResponse_
   typedef wordsCounterResponse_<ContainerAllocator> Type;
 
   wordsCounterResponse_()
-    : client(0)  {
+    : number(0)  {
     }
   wordsCounterResponse_(const ContainerAllocator& _alloc)
-    : client(0)  {
+    : number(0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int32_t _client_type;
-  _client_type client;
+   typedef int32_t _number_type;
+  _number_type number;
 
 
 
@@ -65,7 +65,7 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::pkg::wordsCounterResponse_<ContainerAllocator1> & lhs, const ::pkg::wordsCounterResponse_<ContainerAllocator2> & rhs)
 {
-  return lhs.client == rhs.client;
+  return lhs.number == rhs.number;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -122,12 +122,12 @@ struct MD5Sum< ::pkg::wordsCounterResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bea39d163c45cfc1cc637ad91c8f27e4";
+    return "2474488a3908093ec1307bdd5b35815e";
   }
 
   static const char* value(const ::pkg::wordsCounterResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xbea39d163c45cfc1ULL;
-  static const uint64_t static_value2 = 0xcc637ad91c8f27e4ULL;
+  static const uint64_t static_value1 = 0x2474488a3908093eULL;
+  static const uint64_t static_value2 = 0xc1307bdd5b35815eULL;
 };
 
 template<class ContainerAllocator>
@@ -146,8 +146,7 @@ struct Definition< ::pkg::wordsCounterResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n"
-"int32 client\n"
+    return "int32 number\n"
 "\n"
 ;
   }
@@ -167,7 +166,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.client);
+      stream.next(m.number);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -186,8 +185,8 @@ struct Printer< ::pkg::wordsCounterResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::pkg::wordsCounterResponse_<ContainerAllocator>& v)
   {
-    s << indent << "client: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.client);
+    s << indent << "number: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.number);
   }
 };
 

@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::pkg::wordsCounter > {
   static const char* value()
   {
-    return "3c07c9839699468ac5184f42072bdf6e";
+    return "4afd19f9b5153106d13d35f8799bf301";
   }
 
   static const char* value(const ::pkg::wordsCounter&) { return value(); }
