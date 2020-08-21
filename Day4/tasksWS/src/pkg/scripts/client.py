@@ -15,10 +15,10 @@ def client(sentence):
         resp1 = counter_words(sentence)
         return resp1.number
     except rospy.ServiceException as e:
-        print "Service call failed: %s"%e
+        print "Service call failed: %s"%(e)
 
 def usage():
-    return " {} ".format(sys.argv[0])
+    return "%s" %(sys.argv[0])
 
 if __name__ == "__main__":
     while not rospy.is_shutdown():
