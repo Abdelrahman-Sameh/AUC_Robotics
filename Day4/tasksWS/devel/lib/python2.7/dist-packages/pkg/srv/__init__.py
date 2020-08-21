@@ -1,0 +1,1 @@
+from ._wordsCounter import *

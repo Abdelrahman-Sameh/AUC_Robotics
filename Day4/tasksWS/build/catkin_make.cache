@@ -1,0 +1,2 @@
+pkg
+-DCATKIN_DEVEL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/devel -DCMAKE_INSTALL_PREFIX=/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/install -G Unix Makefiles

@@ -1,0 +1,10 @@
+(cl:defpackage pkg-srv
+  (:use )
+  (:export
+   "WORDSCOUNTER"
+   "<WORDSCOUNTER-REQUEST>"
+   "WORDSCOUNTER-REQUEST"
+   "<WORDSCOUNTER-RESPONSE>"
+   "WORDSCOUNTER-RESPONSE"
+  ))
+

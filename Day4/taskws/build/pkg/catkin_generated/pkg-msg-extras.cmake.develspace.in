@@ -1,2 +1,0 @@
-set(pkg_MESSAGE_FILES "")
-set(pkg_SERVICE_FILES "/home/abdelrahman/Desktop/AUC_Robotics/Day4/taskws/src/pkg/srv/calculate_words.srv")

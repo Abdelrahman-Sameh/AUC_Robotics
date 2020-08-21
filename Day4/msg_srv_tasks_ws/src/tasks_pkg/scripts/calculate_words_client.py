@@ -20,11 +20,8 @@ def usage():
     return " {} ".format(sys.argv[0])
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        s = sys.argv[1]
-    else:
-        print usage()
-        sys.exit(1)
-    print "Requesting %s"%(s)
-    client = client(s)
-    print "{} >>>>> {} Words".format(s, client)  
+    while not rospy.is_shutdown():
+        mystring = input ('Enter your sentence: ')
+        print "Requesting %s"%(sentence)
+        client = client(sentence)
+        print "{} >>>>> {} Words".format(s, client)  

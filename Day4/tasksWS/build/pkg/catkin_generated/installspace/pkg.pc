@@ -1,0 +1,8 @@
+prefix=/home/abdelrahman/Desktop/AUC_Robotics/Day4/tasksWS/install
+
+Name: pkg
+Description: Description of pkg
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 
